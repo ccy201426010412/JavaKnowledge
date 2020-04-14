@@ -5,12 +5,16 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class MqClient {
 
     //生产消息
     public  void produce(String message) throws Exception {
+        LinkedHashMap<String,String> a = new LinkedHashMap<>();
         //该写法可省去自己关闭各种连接
         try (
                 //本地的的BrokerServer.SERVICE_PORT 创建SOCKET
